@@ -1,7 +1,7 @@
 {
   "name": "static-site",
   "version": "1.0.0",
-  "description": "",
+  "description": "At least one badge Project title Description Table of Contents Installation Usage License Contributing Tests Questions",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.0.0",
-    "inquirer": "^6.3.1"
-  }
+    "inquirer": "^6.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikelTafalla/GoodReadme_Generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MikelTafalla/GoodReadme_Generator/issues"
+  },
+  "homepage": "https://github.com/MikelTafalla/GoodReadme_Generator#readme"
 }
