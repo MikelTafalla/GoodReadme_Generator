@@ -13,21 +13,21 @@ ${data.Description}
 * [Author](#author)
 
 ## Installation
-${data.Installation}
+> ${data.Installation}
 ## Instructions
-${data.Usage}
+> ${data.Usage}
 ## License 
-This project is licensed under the ${data.License} - see the ${data.LicenseURL} file for details
+This project is licensed under the ${data.License} - see ${data.LicenseURL} for details
 ## Contributors
-${data.ContributorsGitUserName}
+\n ${data.ContributorsGitUserName}; [Github Repo](${Contributors_url})
 ## Tests
 ${data.tests}
 ## Author 
-![ProfileImage](${data.avatar_url})
-**${data.Username}**
-Email: ${data.email}
-Location:${data.location}
-GitHub: ${data.url}
+\n![ProfileImage](${data.avatar_url})
+\n**${data.Username}**
+\nEmail: ${data.email}
+\nLocation: ${data.location}
+\nGitHub: ${data.url}
 
 `;
 }
