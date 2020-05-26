@@ -4,12 +4,13 @@ function generateMarkdown(data) {
 ${data.Description}
 
 # Table of Contents
-\n* [Installation](#installation)
-\n* [Instructions](#instructions)
-\n* [License](#license)
-\n* [Contributors](#contributors)
-\n* [Tests](#tests)
-\n* [Author](#author)
+
+* [Installation](#installation)
+* [Instructions](#instructions)
+* [License](#license)
+* [Contributors](#contributors)
+* [Tests](#tests)
+* [Author](#author)
 
 ## Installation
 ${data.Installation}
@@ -21,7 +22,12 @@ This project is licensed under the ${data.License} - see the ${data.LicenseURL} 
 ${data.ContributorsGitUserName}
 ## Tests
 ${data.tests}
-
+## Author 
+![ProfileImage](${data.avatar_url})
+**${data.Username}**
+Email: ${data.email}
+Location:${data.location}
+GitHub: ${data.url}
 
 `;
 }
