@@ -18,13 +18,13 @@ function generateMarkdown(data) {
 ## Instructions
 > ${data.Usage}
 ## License 
-This project is licensed under the ${data.License} - see ${data.LicenseURL} for details
+${data.printLicense} 
 ## Contributors
 ${data.contributorsUrlString}
 ## Tests
 ${data.tests}
 ## Author 
-\n![ProfileImage](${data.avatar_url})
+\n![ProfileImage](${data.printimg})
 
 \n**${data.Username}**
 \nEmail: ${data.email}
@@ -36,7 +36,3 @@ ${data.tests}
 
 module.exports = generateMarkdown;
 
-
-// Incluir badge
-// investigar axios para hacer get the github users
-// Romper respuesta de contributors en individual

@@ -35,7 +35,7 @@ const questions = [
   },
   {
     type: "input",
-    message: "Provide only the License name (Example: MIT):",
+    message: "Provide only the License name (Example: MIT). If none, type Not Applicable:",
     name: "License"
   },
   {
@@ -77,14 +77,20 @@ async function init() {
  //Deconstruct object and create constants for each response
   const {Username, Title, Description, Installation, Usage, License, LicenseURL, ContributorsGitUserName, tests} = UserResponse;
 
+ //Create badge
   const badge = `![GitHub repo size](https://img.shields.io/github/repo-size/${Username}/${Title}?logo=github)`
   
+ // Create License dynamically with a hyperlink
+  const printLicense = `\n[${License}](${LicenseURL})\n`;
 
  // Retrieving data from user from github API
   const GitHubInfo = await axios.get(`https://api.github.com/users/${Username}`);
   console.log(GitHubInfo);
  // Deconstruct GitHubInfo object and obtain requested nested elements
   const {data: {avatar_url, html_url, location, email}} = GitHubInfo
+
+  //modify image size
+  const printimg = `<img src="${avatar_url}" width="100"/>`;
 
  // Split Contributors string of names and store in a constant as an Array
   const contributorsArray = ContributorsGitUserName.split(",");
@@ -105,7 +111,7 @@ async function init() {
   });
 
  //Call the generateMArkdown and input our responses. avatar_url=image from github; html_url = repo url;
-  const ReadmeSkeleton = generateMarkdown({Username, Title, Description, Installation, Usage, License, LicenseURL, badge, contributorsUrlString, tests, avatar_url, html_url, location, email});
+  const ReadmeSkeleton = generateMarkdown({Username, Title, Description, Installation, Usage, printLicense, badge, contributorsUrlString, tests, printimg, html_url, location, email});
 
   //Call writetoFile function
   writeToFile("GeneratedReadme.md", ReadmeSkeleton);  
