@@ -19,11 +19,12 @@ ${data.Description}
 ## License 
 This project is licensed under the ${data.License} - see ${data.LicenseURL} for details
 ## Contributors
-\n ${data.ContributorsGitUserName}; [Github Repo](${Contributors_url})
+${data.contributorsUrlString}
 ## Tests
 ${data.tests}
 ## Author 
 \n![ProfileImage](${data.avatar_url})
+
 \n**${data.Username}**
 \nEmail: ${data.email}
 \nLocation: ${data.location}

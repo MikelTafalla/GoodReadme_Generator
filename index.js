@@ -35,7 +35,7 @@ const questions = [
   },
   {
     type: "input",
-    message: "Provide only License name (Example: MIT):",
+    message: "Provide only the License name (Example: MIT):",
     name: "License"
   },
   {
@@ -83,41 +83,32 @@ async function init() {
   console.log(GitHubInfo);
  // Deconstruct GitHubInfo object and obtain requested nested elements
   const {data: {avatar_url, url, location, email}} = GitHubInfo
-  console.log(avatar_url);
-  console.log(location);
 
  // Split Contributors string of names and store in a constant as an Array
   const contributorsArray = ContributorsGitUserName.split(",");
   console.log(contributorsArray);
-  console.log(typeof contributorsArray);
-
+ // Make a separate array that holds the URLs
+  let contributorsUrlString = ``;
  // Iterate through all contributors
+ // forEach element in our contributorsArray,
   contributorsArray.forEach(async function(element) {
-    // Store each element in the constant name
-   const ContributorsGithubName = element;
-   console.log(ContributorsGithubName);
 
-   //Access the Github profile of the contributors with axios
-   const ContributorsInfo = await axios.get(`https://api.github.com/users/${ContributorsGithubName}`);
-   console.log(ContributorsInfo);
-   // Deconstruct GitHub contributors profile object and obtain requested nested elements
-   let {data: {url}} = ContributorsInfo
-   //Change let url name
-   let ContributorsURL = url;
-   console.log(ContributorsURL)
+    // make a Github Repo url string "http://github.com/" + element
+    let Url = `http://github.com/${element}`;
+    // Dynamically created contributors on generateMarkdown.js
+    const mdStr = `\n[${element}](${Url})\n`;
+    //Send the Dynamically created url to the global let variable
+    contributorsUrlString += mdStr;
+
   });
-    
 
  //Call the generateMArkdown and input our responses
-  const ReadmeSkeleton = generateMarkdown({Username, Title, Description, Installation, Usage, License, LicenseURL, ContributorsGitUserName, tests, avatar_url, url, location, email});
-
+  const ReadmeSkeleton = generateMarkdown({Username, Title, Description, Installation, Usage, License, LicenseURL, contributorsUrlString, tests, avatar_url, url, location, email});
 
   //Call writetoFile function
   writeToFile("GeneratedReadme.md", ReadmeSkeleton);  
 
 };
-
-
  
 //Call function init()
 init();
