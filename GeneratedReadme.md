@@ -1,6 +1,9 @@
 
-# GoodReadme_Generator 
-not yet
+# GoodReadme_Generator
+
+![GitHub repo size](https://img.shields.io/github/repo-size/MikelTafalla/GoodReadme_Generator?logo=github)
+
+TBD
 
 # Table of Contents
 
@@ -12,19 +15,17 @@ not yet
 * [Author](#author)
 
 ## Installation
-> no yet
+> TBD
 ## Instructions
-> not yer
+> TBD
 ## License 
-This project is licensed under the none - see none for details
+This project is licensed under the TBD - see TBD for details
 ## Contributors
 
 [musicman785](http://github.com/musicman785)
 
-[MikelTafalla](http://github.com/MikelTafalla)
-
 ## Tests
-
+TBD
 ## Author 
 
 ![ProfileImage](https://avatars3.githubusercontent.com/u/61996656?v=4)
@@ -32,8 +33,9 @@ This project is licensed under the none - see none for details
 
 **MikelTafalla**
 
-Email: undefined
+Email: null
 
 Location: Santa Barbara
 
+GitHub: https://github.com/MikelTafalla
 

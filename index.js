@@ -76,13 +76,15 @@ async function init() {
   const UserResponse = await inquirer.prompt(questions);
  //Deconstruct object and create constants for each response
   const {Username, Title, Description, Installation, Usage, License, LicenseURL, ContributorsGitUserName, tests} = UserResponse;
+
+  const badge = `![GitHub repo size](https://img.shields.io/github/repo-size/${Username}/${Title}?logo=github)`
   
 
  // Retrieving data from user from github API
   const GitHubInfo = await axios.get(`https://api.github.com/users/${Username}`);
   console.log(GitHubInfo);
  // Deconstruct GitHubInfo object and obtain requested nested elements
-  const {data: {avatar_url, html_url, location}} = GitHubInfo
+  const {data: {avatar_url, html_url, location, email}} = GitHubInfo
 
  // Split Contributors string of names and store in a constant as an Array
   const contributorsArray = ContributorsGitUserName.split(",");
@@ -95,7 +97,7 @@ async function init() {
 
     // make a Github Repo url string "http://github.com/" + element
     let Url = `http://github.com/${element}`;
-    // Dynamically created contributors on generateMarkdown.js
+    // Dynamically creates contributors on generateMarkdown.js
     const mdStr = `\n[${element}](${Url})\n`;
     //Send the Dynamically created url to the global let variable
     contributorsUrlString += mdStr;
@@ -103,7 +105,7 @@ async function init() {
   });
 
  //Call the generateMArkdown and input our responses. avatar_url=image from github; html_url = repo url;
-  const ReadmeSkeleton = generateMarkdown({Username, Title, Description, Installation, Usage, License, LicenseURL, contributorsUrlString, tests, avatar_url, html_url, location});
+  const ReadmeSkeleton = generateMarkdown({Username, Title, Description, Installation, Usage, License, LicenseURL, badge, contributorsUrlString, tests, avatar_url, html_url, location, email});
 
   //Call writetoFile function
   writeToFile("GeneratedReadme.md", ReadmeSkeleton);  

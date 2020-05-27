@@ -1,7 +1,8 @@
 function generateMarkdown(data) {
   return `
-# ${data.Title} 
-${data.Description}
+# ${data.Title}
+\n${data.badge}
+\n${data.Description}
 
 # Table of Contents
 
@@ -26,6 +27,7 @@ ${data.tests}
 \n![ProfileImage](${data.avatar_url})
 
 \n**${data.Username}**
+\nEmail: ${data.email}
 \nLocation: ${data.location}
 \nGitHub: ${data.html_url}
 
