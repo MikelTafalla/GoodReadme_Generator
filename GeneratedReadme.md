@@ -1,7 +1,7 @@
 
-# 
+# GoodReadme_Generator
 
-![GitHub repo size](https://img.shields.io/github/repo-size/MikelTafalla/?logo=github)
+![GitHub repo size](https://img.shields.io/github/repo-size/MikelTafalla/GoodReadme_Generator?logo=github)
 
 
 
@@ -12,6 +12,7 @@
 * [License](#license)
 * [Contributors](#contributors)
 * [Tests](#tests)
+* [Acknowledgement](#acknowledgement)
 * [Author](#author)
 
 ## Installation
@@ -28,9 +29,16 @@
 
 ## Tests
 
+## Acknowledgement
+
+mikel Rodriguez
+
+ Crish music
+
+
 ## Author 
 
-![ProfileImage](<img src="https://avatars3.githubusercontent.com/u/61996656?v=4" width="100"/>)
+![ProfileImage](https://avatars3.githubusercontent.com/u/61996656?v=4)
 
 
 **MikelTafalla**

@@ -52,6 +52,11 @@ const questions = [
     type: "input",
     message: "Provide examples on how to run tests:",
     name: "tests"
+  },
+  {
+    type: "input",
+    message: "please enter the names and urls of any people you want to acknowledge if any (If there are mulitple people, seperate names with comma and no space!). If there are no people o acknowledge leave it blank:",
+    name: "acknowledgment"
   }
 
 ];
@@ -75,7 +80,7 @@ async function init() {
   console.log("Let's create your ReadMe")
   const UserResponse = await inquirer.prompt(questions);
  //Deconstruct object and create constants for each response
-  const {Username, Title, Description, Installation, Usage, License, LicenseURL, ContributorsGitUserName, tests} = UserResponse;
+  const {Username, Title, Description, Installation, Usage, License, LicenseURL, ContributorsGitUserName, tests, acknowledgment} = UserResponse;
 
  //Create badge
   const badge = `![GitHub repo size](https://img.shields.io/github/repo-size/${Username}/${Title}?logo=github)`
@@ -89,12 +94,10 @@ async function init() {
  // Deconstruct GitHubInfo object and obtain requested nested elements
   const {data: {avatar_url, html_url, location, email}} = GitHubInfo
 
-  //modify image size
-  const printimg = `<img src="${avatar_url}" width="100"/>`;
-
  // Split Contributors string of names and store in a constant as an Array
   const contributorsArray = ContributorsGitUserName.split(",");
   console.log(contributorsArray);
+
  // Make a separate array that holds the URLs
   let contributorsUrlString = ``;
  // Iterate through all contributors
@@ -110,8 +113,24 @@ async function init() {
 
   });
 
+ // Split acknowledge people string of names and store in a constant as an Array
+  const acknowledgeArray = acknowledgment.split(",");
+  console.log(acknowledgeArray);
+ // Make a separate array that holds the people
+  let Acknowledgedstring = ``;
+ // Iterate through all acknowledgepeople
+ // forEach element in our acknowledgeArray,
+  acknowledgeArray.forEach(function(people) {
+
+  // Dynamically creates acknowledge on generateMarkdown.js
+  const peoplestring = `\n${people}\n`;
+  //Send the Dynamically created url to the global let variable
+  Acknowledgedstring += peoplestring;
+
+});
+
  //Call the generateMArkdown and input our responses. avatar_url=image from github; html_url = repo url;
-  const ReadmeSkeleton = generateMarkdown({Username, Title, Description, Installation, Usage, printLicense, badge, contributorsUrlString, tests, printimg, html_url, location, email});
+  const ReadmeSkeleton = generateMarkdown({Username, Title, Description, Installation, Usage, printLicense, badge, contributorsUrlString, tests,Acknowledgedstring, avatar_url, html_url, location, email});
 
   //Call writetoFile function
   writeToFile("GeneratedReadme.md", ReadmeSkeleton);  

@@ -11,6 +11,7 @@ function generateMarkdown(data) {
 * [License](#license)
 * [Contributors](#contributors)
 * [Tests](#tests)
+* [Acknowledgement](#acknowledgement)
 * [Author](#author)
 
 ## Installation
@@ -23,8 +24,11 @@ ${data.printLicense}
 ${data.contributorsUrlString}
 ## Tests
 ${data.tests}
+## Acknowledgement
+${data.Acknowledgedstring}
+
 ## Author 
-\n![ProfileImage](${data.printimg})
+\n![ProfileImage](${data.avatar_url})
 
 \n**${data.Username}**
 \nEmail: ${data.email}
