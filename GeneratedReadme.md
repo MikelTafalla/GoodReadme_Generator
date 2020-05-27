@@ -1,6 +1,6 @@
 
-# fs 
-fds
+# GoodReadme_Generator 
+not yet
 
 # Table of Contents
 
@@ -12,16 +12,16 @@ fds
 * [Author](#author)
 
 ## Installation
-> fds
+> no yet
 ## Instructions
-> ds
+> not yer
 ## License 
-This project is licensed under the fs - see fds for details
+This project is licensed under the none - see none for details
 ## Contributors
 
-[MikelTafalla](http://github.com/MikelTafalla)
-
 [musicman785](http://github.com/musicman785)
+
+[MikelTafalla](http://github.com/MikelTafalla)
 
 ## Tests
 
@@ -32,9 +32,8 @@ This project is licensed under the fs - see fds for details
 
 **MikelTafalla**
 
-Email: null
+Email: undefined
 
 Location: Santa Barbara
 
-GitHub: https://api.github.com/users/MikelTafalla
 

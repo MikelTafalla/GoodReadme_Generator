@@ -26,9 +26,8 @@ ${data.tests}
 \n![ProfileImage](${data.avatar_url})
 
 \n**${data.Username}**
-\nEmail: ${data.email}
 \nLocation: ${data.location}
-\nGitHub: ${data.url}
+\nGitHub: ${data.html_url}
 
 `;
 }

@@ -82,7 +82,7 @@ async function init() {
   const GitHubInfo = await axios.get(`https://api.github.com/users/${Username}`);
   console.log(GitHubInfo);
  // Deconstruct GitHubInfo object and obtain requested nested elements
-  const {data: {avatar_url, url, location, email}} = GitHubInfo
+  const {data: {avatar_url, html_url, location}} = GitHubInfo
 
  // Split Contributors string of names and store in a constant as an Array
   const contributorsArray = ContributorsGitUserName.split(",");
@@ -91,7 +91,7 @@ async function init() {
   let contributorsUrlString = ``;
  // Iterate through all contributors
  // forEach element in our contributorsArray,
-  contributorsArray.forEach(async function(element) {
+  contributorsArray.forEach(function(element) {
 
     // make a Github Repo url string "http://github.com/" + element
     let Url = `http://github.com/${element}`;
@@ -102,8 +102,8 @@ async function init() {
 
   });
 
- //Call the generateMArkdown and input our responses
-  const ReadmeSkeleton = generateMarkdown({Username, Title, Description, Installation, Usage, License, LicenseURL, contributorsUrlString, tests, avatar_url, url, location, email});
+ //Call the generateMArkdown and input our responses. avatar_url=image from github; html_url = repo url;
+  const ReadmeSkeleton = generateMarkdown({Username, Title, Description, Installation, Usage, License, LicenseURL, contributorsUrlString, tests, avatar_url, html_url, location});
 
   //Call writetoFile function
   writeToFile("GeneratedReadme.md", ReadmeSkeleton);  
