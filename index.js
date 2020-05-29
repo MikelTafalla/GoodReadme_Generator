@@ -40,7 +40,7 @@ const questions = [
   },
   {
     type: "input",
-    message: "What is the License URL?",
+    message: "What is the License URL? If N/A type N/A or #:",
     name: "LicenseURL"
   },
   {
@@ -85,7 +85,7 @@ async function init() {
  //If Username question is blank app will restart again after all questions instead of throwing an error.
   if (Username === "") {
     return init();
-  }
+  };
 
  //Create badge
   const badge = `![GitHub repo size](https://img.shields.io/github/repo-size/${Username}/${Title}?logo=github)`
