@@ -3,7 +3,7 @@
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/MikelTafalla/GoodReadme_Generator?logo=github)
 
-Create a command-line application that dynamically generates a README.md from a user's input. The user will be prompted for their GitHub username and other information pertaining to the project the README is for.
+Create a command-line application that dynamically generates a README.md from a user’s input. The user will be prompted for their GitHub username and other information pertaining to the project the README is for.
 
 # Table of Contents
 

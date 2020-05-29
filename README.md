@@ -4,6 +4,12 @@
 
 Create a command-line application that dynamically generates a README.md from a user's input. The user will be prompted for their GitHub username and other information pertaining to the project the README is for.
 
+# Technologies Used
+
+1. Node.js
+2. NPM
+3. ES6
+
 # Table of Contents
 
 * [Installation](#installation)

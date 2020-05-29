@@ -108,7 +108,7 @@ async function init() {
   let contributorsUrlString = ``;
  // Iterate through all contributors
  // forEach element in our contributorsArray,
-  contributorsArray.forEach(function(element) {
+  contributorsArray.forEach(element => {
 
     // make a Github Repo url string "http://github.com/" + element
     let Url = `http://github.com/${element}`;
@@ -126,7 +126,7 @@ async function init() {
   let Acknowledgedstring = ``;
  // Iterate through all acknowledgepeople
  // forEach element in our acknowledgeArray,
-  acknowledgeArray.forEach(function(people) {
+  acknowledgeArray.forEach(people => {
 
   // Dynamically creates acknowledge on generateMarkdown.js
   const peoplestring = `\n${people}\n`;
