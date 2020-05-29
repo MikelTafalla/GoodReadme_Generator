@@ -55,7 +55,7 @@ const questions = [
   },
   {
     type: "input",
-    message: "please enter the names and urls of any people you want to acknowledge if any (If there are mulitple people, seperate names with comma and no space!). If there are no people o acknowledge leave it blank:",
+    message: "please enter the names and urls of any people you want to acknowledge if any (If there are mulitple people, seperate names with comma and no space!). If there are no people to acknowledge leave it blank:",
     name: "acknowledgment"
   }
 
@@ -78,9 +78,14 @@ function writeToFile(fileName, data) {
 
 async function init() {
   console.log("Let's create your ReadMe")
+  console.log("Do not leave 1st question blank;App won't work.You'll have to run the app again")
   const UserResponse = await inquirer.prompt(questions);
  //Deconstruct object and create constants for each response
   const {Username, Title, Description, Installation, Usage, License, LicenseURL, ContributorsGitUserName, tests, acknowledgment} = UserResponse;
+ //If Username question is blank app will restart again after all questions instead of throwing an error.
+  if (Username === "") {
+    return init();
+  }
 
  //Create badge
   const badge = `![GitHub repo size](https://img.shields.io/github/repo-size/${Username}/${Title}?logo=github)`
@@ -91,6 +96,7 @@ async function init() {
  // Retrieving data from user from github API
   const GitHubInfo = await axios.get(`https://api.github.com/users/${Username}`);
   console.log(GitHubInfo);
+  
  // Deconstruct GitHubInfo object and obtain requested nested elements
   const {data: {avatar_url, html_url, location, email}} = GitHubInfo
 
@@ -134,6 +140,7 @@ async function init() {
 
   //Call writetoFile function
   writeToFile("GeneratedReadme.md", ReadmeSkeleton);  
+  
 
 };
  
