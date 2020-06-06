@@ -36,10 +36,10 @@ Create a command-line application that dynamically generates a README.md from a 
 
 ## Tests
 Once the file is generated go inside it on VSCode and do right click on its tab and click open preview; or go to the generated file on VSCode and hit: cmd + k + v (mac) or ctrl + k + v (windows)
-## Acknowledgement
 
+### Example Gif
 
-
+![](assets/Mikel_GoodReadme.gif)
 
 ## Author 
 
